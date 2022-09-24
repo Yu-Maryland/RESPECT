@@ -1,0 +1,980 @@
+{'baseline': 'rollout',
+ 'batch_size': 128,
+ 'bl_alpha': 0.05,
+ 'bl_warmup_epochs': 1,
+ 'checkpoint_encoder': False,
+ 'checkpoint_epochs': 1,
+ 'data_distribution': None,
+ 'embedding_dim': 256,
+ 'epoch_size': 12800,
+ 'epoch_start': 0,
+ 'eval_batch_size': 512,
+ 'eval_dataset_path': 'dataset/eval_dataset/operator_type_1/TopoSort50_Dataset_Eval_4_in_degree_3resource_priorityInverse_10K_20to40_weight35.pt',
+ 'eval_graph_size': 50,
+ 'eval_only': False,
+ 'exp_beta': 0.8,
+ 'graph_file': None,
+ 'graph_size': 30,
+ 'hidden_dim': 256,
+ 'load_path': None,
+ 'log_dir': 'logs',
+ 'log_step': 50,
+ 'lr_critic': 1e-06,
+ 'lr_decay': 0.5,
+ 'lr_model': 1e-06,
+ 'max_grad_norm': 1.0,
+ 'model': 'pointer',
+ 'n_encode_layers': 3,
+ 'n_epochs': 300,
+ 'n_head_decoder': 2,
+ 'n_head_encoder': 1,
+ 'n_layer_decoder': 2,
+ 'n_layer_encoder': 1,
+ 'no_cuda': False,
+ 'no_progress_bar': False,
+ 'no_tensorboard': False,
+ 'normalization': 'batch',
+ 'num_coordinates': 11,
+ 'output_dir': 'outputs',
+ 'problem': 'toposort',
+ 'resume': None,
+ 'run_name': 'run_20210806T110255',
+ 'save_dir': 'outputs/toposort_30/run_20210806T110255',
+ 'seed': 1234,
+ 'shrink_size': None,
+ 'tanh_clipping': 10.0,
+ 'train_dataset_path': 'dataset/training_dataset/operator_type_1/TopoSort30_Dataset_Training_4_in_degree_3resource_priorityInverse_128k_10to25_weight35.pt',
+ 'use_cuda': True,
+ 'val_dataset': None,
+ 'val_size': 1024}
+Evaluating baseline model on evaluation dataset
+Start train epoch 0, lr=1e-06 for run run_20210806T110255
+epoch: 0, train_batch_id: 0, avg_cost: 0.2259366363286972
+grad_norm: 0.5291270017623901, clipped: 0.5291270017623901
+epoch: 0, train_batch_id: 50, avg_cost: 0.22498315572738647
+grad_norm: 0.7072625160217285, clipped: 0.7072625160217285
+epoch: 0, train_batch_id: 100, avg_cost: 0.22080378234386444
+grad_norm: 0.7641561627388, clipped: 0.7641561627388
+epoch: 0, train_batch_id: 150, avg_cost: 0.21980315446853638
+grad_norm: 0.5976405143737793, clipped: 0.5976405143737793
+epoch: 0, train_batch_id: 200, avg_cost: 0.20736002922058105
+grad_norm: 0.8207792639732361, clipped: 0.8207792639732361
+epoch: 0, train_batch_id: 250, avg_cost: 0.1967569887638092
+grad_norm: 0.7684224247932434, clipped: 0.7684224247932434
+epoch: 0, train_batch_id: 300, avg_cost: 0.18900063633918762
+grad_norm: 0.967306911945343, clipped: 0.967306911945343
+epoch: 0, train_batch_id: 350, avg_cost: 0.17790667712688446
+grad_norm: 0.8252056241035461, clipped: 0.8252056241035461
+epoch: 0, train_batch_id: 400, avg_cost: 0.15705452859401703
+grad_norm: 1.5483843088150024, clipped: 1.0
+epoch: 0, train_batch_id: 450, avg_cost: 0.14717093110084534
+grad_norm: 1.5295329093933105, clipped: 1.0
+epoch: 0, train_batch_id: 500, avg_cost: 0.136069655418396
+grad_norm: 2.561316967010498, clipped: 1.0
+epoch: 0, train_batch_id: 550, avg_cost: 0.12613847851753235
+grad_norm: 2.264096975326538, clipped: 1.0
+epoch: 0, train_batch_id: 600, avg_cost: 0.12408518046140671
+grad_norm: 3.1330761909484863, clipped: 1.0
+epoch: 0, train_batch_id: 650, avg_cost: 0.116922527551651
+grad_norm: 3.2400567531585693, clipped: 1.0
+epoch: 0, train_batch_id: 700, avg_cost: 0.11560365557670593
+grad_norm: 3.040940761566162, clipped: 1.0
+epoch: 0, train_batch_id: 750, avg_cost: 0.11895297467708588
+grad_norm: 3.3752729892730713, clipped: 1.0
+epoch: 0, train_batch_id: 800, avg_cost: 0.11235564202070236
+grad_norm: 2.4987878799438477, clipped: 1.0
+epoch: 0, train_batch_id: 850, avg_cost: 0.11095020174980164
+grad_norm: 3.8133418560028076, clipped: 1.0
+epoch: 0, train_batch_id: 900, avg_cost: 0.11454367637634277
+grad_norm: 2.734039545059204, clipped: 1.0
+epoch: 0, train_batch_id: 950, avg_cost: 0.10896524786949158
+grad_norm: 4.263102054595947, clipped: 1.0
+Finished epoch 0, took 00:07:33 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.99
+Validation mean of recall_accuracy: 0.77
+Validation max of recall_accuracy: 0.93
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.10175736993551254 +- 0.0006271004094742239
+Evaluating candidate model on evaluation dataset
+Epoch 0 candidate mean 0.10175736993551254, baseline epoch 0 mean 0.2404477596282959, difference -0.13869038224220276
+p-value: 0.0
+Update baseline
+Evaluating baseline model on evaluation dataset
+Set warmup alpha = 1.0
+Start train epoch 1, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 1, train_batch_id: 0, avg_cost: 0.10766229778528214
+grad_norm: 2.785163640975952, clipped: 1.0
+epoch: 1, train_batch_id: 50, avg_cost: 0.10475793480873108
+grad_norm: 2.775949478149414, clipped: 1.0
+epoch: 1, train_batch_id: 100, avg_cost: 0.10343874990940094
+grad_norm: 2.256889820098877, clipped: 1.0
+epoch: 1, train_batch_id: 150, avg_cost: 0.11306615173816681
+grad_norm: 3.8598294258117676, clipped: 1.0
+epoch: 1, train_batch_id: 200, avg_cost: 0.10656921565532684
+grad_norm: 2.543767213821411, clipped: 1.0
+epoch: 1, train_batch_id: 250, avg_cost: 0.10301777720451355
+grad_norm: 3.226668119430542, clipped: 1.0
+epoch: 1, train_batch_id: 300, avg_cost: 0.10089033842086792
+grad_norm: 2.4770874977111816, clipped: 1.0
+epoch: 1, train_batch_id: 350, avg_cost: 0.11128805577754974
+grad_norm: 3.2932074069976807, clipped: 1.0
+epoch: 1, train_batch_id: 400, avg_cost: 0.09914973378181458
+grad_norm: 4.451996326446533, clipped: 1.0
+epoch: 1, train_batch_id: 450, avg_cost: 0.09943311661481857
+grad_norm: 3.831345558166504, clipped: 1.0
+epoch: 1, train_batch_id: 500, avg_cost: 0.10392770171165466
+grad_norm: 2.7909977436065674, clipped: 1.0
+epoch: 1, train_batch_id: 550, avg_cost: 0.09980353713035583
+grad_norm: 3.2442116737365723, clipped: 1.0
+epoch: 1, train_batch_id: 600, avg_cost: 0.09797368943691254
+grad_norm: 3.4831604957580566, clipped: 1.0
+epoch: 1, train_batch_id: 650, avg_cost: 0.09883563220500946
+grad_norm: 2.988095283508301, clipped: 1.0
+epoch: 1, train_batch_id: 700, avg_cost: 0.0942360907793045
+grad_norm: 2.939828395843506, clipped: 1.0
+epoch: 1, train_batch_id: 750, avg_cost: 0.09950772672891617
+grad_norm: 4.719920635223389, clipped: 1.0
+epoch: 1, train_batch_id: 800, avg_cost: 0.0985727459192276
+grad_norm: 2.9573922157287598, clipped: 1.0
+epoch: 1, train_batch_id: 850, avg_cost: 0.09713012725114822
+grad_norm: 2.7185347080230713, clipped: 1.0
+epoch: 1, train_batch_id: 900, avg_cost: 0.09642744064331055
+grad_norm: 3.469228744506836, clipped: 1.0
+epoch: 1, train_batch_id: 950, avg_cost: 0.09164188802242279
+grad_norm: 3.099144220352173, clipped: 1.0
+Finished epoch 1, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.96
+Validation mean of recall_accuracy: 0.77
+Validation max of recall_accuracy: 0.94
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.10098247230052948 +- 0.0006339569808915257
+Evaluating candidate model on evaluation dataset
+Epoch 1 candidate mean 0.10098247230052948, baseline epoch 0 mean 0.10175736993551254, difference -0.0007748976349830627
+p-value: 8.540922084885389e-34
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 2, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 2, train_batch_id: 0, avg_cost: 0.09093248844146729
+grad_norm: 4.424253940582275, clipped: 1.0
+epoch: 2, train_batch_id: 50, avg_cost: 0.0908929705619812
+grad_norm: 3.01357102394104, clipped: 1.0
+epoch: 2, train_batch_id: 100, avg_cost: 0.09156805276870728
+grad_norm: 2.8417439460754395, clipped: 1.0
+epoch: 2, train_batch_id: 150, avg_cost: 0.1006251871585846
+grad_norm: 3.211348056793213, clipped: 1.0
+epoch: 2, train_batch_id: 200, avg_cost: 0.0939224436879158
+grad_norm: 3.809924602508545, clipped: 1.0
+epoch: 2, train_batch_id: 250, avg_cost: 0.09492967277765274
+grad_norm: 3.2767038345336914, clipped: 1.0
+epoch: 2, train_batch_id: 300, avg_cost: 0.09302710741758347
+grad_norm: 6.289154052734375, clipped: 1.0
+epoch: 2, train_batch_id: 350, avg_cost: 0.09591394662857056
+grad_norm: 3.6064293384552, clipped: 1.0
+epoch: 2, train_batch_id: 400, avg_cost: 0.08695506304502487
+grad_norm: 4.090585708618164, clipped: 1.0
+epoch: 2, train_batch_id: 450, avg_cost: 0.09216240048408508
+grad_norm: 4.436889171600342, clipped: 1.0
+epoch: 2, train_batch_id: 500, avg_cost: 0.09578444063663483
+grad_norm: 2.9057328701019287, clipped: 1.0
+epoch: 2, train_batch_id: 550, avg_cost: 0.08717070519924164
+grad_norm: 2.992673635482788, clipped: 1.0
+epoch: 2, train_batch_id: 600, avg_cost: 0.0910181999206543
+grad_norm: 3.968207359313965, clipped: 1.0
+epoch: 2, train_batch_id: 650, avg_cost: 0.089375339448452
+grad_norm: 3.4426369667053223, clipped: 1.0
+epoch: 2, train_batch_id: 700, avg_cost: 0.09044334292411804
+grad_norm: 3.228424310684204, clipped: 1.0
+epoch: 2, train_batch_id: 750, avg_cost: 0.09492693841457367
+grad_norm: 4.020684242248535, clipped: 1.0
+epoch: 2, train_batch_id: 800, avg_cost: 0.09224510192871094
+grad_norm: 3.045747756958008, clipped: 1.0
+epoch: 2, train_batch_id: 850, avg_cost: 0.09316191077232361
+grad_norm: 4.630256652832031, clipped: 1.0
+epoch: 2, train_batch_id: 900, avg_cost: 0.08966904878616333
+grad_norm: 3.9528372287750244, clipped: 1.0
+epoch: 2, train_batch_id: 950, avg_cost: 0.089236781001091
+grad_norm: 3.2989420890808105, clipped: 1.0
+Finished epoch 2, took 00:09:39 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.88
+Validation mean of recall_accuracy: 0.77
+Validation max of recall_accuracy: 0.94
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.10037007182836533 +- 0.0006297126528806984
+Evaluating candidate model on evaluation dataset
+Epoch 2 candidate mean 0.10037007182836533, baseline epoch 1 mean 0.10098247230052948, difference -0.000612400472164154
+p-value: 4.4124607971561255e-63
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 3, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 3, train_batch_id: 0, avg_cost: 0.08635935187339783
+grad_norm: 3.918194532394409, clipped: 1.0
+epoch: 3, train_batch_id: 50, avg_cost: 0.0872349962592125
+grad_norm: 3.9490015506744385, clipped: 1.0
+epoch: 3, train_batch_id: 100, avg_cost: 0.08842825144529343
+grad_norm: 5.650308609008789, clipped: 1.0
+epoch: 3, train_batch_id: 150, avg_cost: 0.09561587870121002
+grad_norm: 4.328438758850098, clipped: 1.0
+epoch: 3, train_batch_id: 200, avg_cost: 0.09102766960859299
+grad_norm: 2.776007890701294, clipped: 1.0
+epoch: 3, train_batch_id: 250, avg_cost: 0.09060193598270416
+grad_norm: 3.095428466796875, clipped: 1.0
+epoch: 3, train_batch_id: 300, avg_cost: 0.08743306994438171
+grad_norm: 3.7808237075805664, clipped: 1.0
+epoch: 3, train_batch_id: 350, avg_cost: 0.09278403967618942
+grad_norm: 3.246159315109253, clipped: 1.0
+epoch: 3, train_batch_id: 400, avg_cost: 0.08397355675697327
+grad_norm: 2.991600275039673, clipped: 1.0
+epoch: 3, train_batch_id: 450, avg_cost: 0.08190898597240448
+grad_norm: 2.529132843017578, clipped: 1.0
+epoch: 3, train_batch_id: 500, avg_cost: 0.0885171964764595
+grad_norm: 5.162754535675049, clipped: 1.0
+epoch: 3, train_batch_id: 550, avg_cost: 0.08571165800094604
+grad_norm: 2.5485236644744873, clipped: 1.0
+epoch: 3, train_batch_id: 600, avg_cost: 0.0846116840839386
+grad_norm: 2.491401433944702, clipped: 1.0
+epoch: 3, train_batch_id: 650, avg_cost: 0.08811154961585999
+grad_norm: 6.177084922790527, clipped: 1.0
+epoch: 3, train_batch_id: 700, avg_cost: 0.08778807520866394
+grad_norm: 3.4451942443847656, clipped: 1.0
+epoch: 3, train_batch_id: 750, avg_cost: 0.08820460736751556
+grad_norm: 2.6778602600097656, clipped: 1.0
+epoch: 3, train_batch_id: 800, avg_cost: 0.08772090822458267
+grad_norm: 3.1673388481140137, clipped: 1.0
+epoch: 3, train_batch_id: 850, avg_cost: 0.08970674872398376
+grad_norm: 3.93459415435791, clipped: 1.0
+epoch: 3, train_batch_id: 900, avg_cost: 0.08648927509784698
+grad_norm: 2.3271491527557373, clipped: 1.0
+epoch: 3, train_batch_id: 950, avg_cost: 0.08567991852760315
+grad_norm: 2.7745800018310547, clipped: 1.0
+Finished epoch 3, took 00:09:36 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.84
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.94
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.09961146116256714 +- 0.0006298884400166571
+Evaluating candidate model on evaluation dataset
+Epoch 3 candidate mean 0.09961146861314774, baseline epoch 2 mean 0.10037007182836533, difference -0.0007586032152175903
+p-value: 1.1902295836641934e-48
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 4, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 4, train_batch_id: 0, avg_cost: 0.08275732398033142
+grad_norm: 2.8593907356262207, clipped: 1.0
+epoch: 4, train_batch_id: 50, avg_cost: 0.08477755635976791
+grad_norm: 4.196517467498779, clipped: 1.0
+epoch: 4, train_batch_id: 100, avg_cost: 0.08096540719270706
+grad_norm: 1.8545364141464233, clipped: 1.0
+epoch: 4, train_batch_id: 150, avg_cost: 0.09362955391407013
+grad_norm: 2.959355354309082, clipped: 1.0
+epoch: 4, train_batch_id: 200, avg_cost: 0.086955726146698
+grad_norm: 2.76444673538208, clipped: 1.0
+epoch: 4, train_batch_id: 250, avg_cost: 0.0863829106092453
+grad_norm: 3.4921774864196777, clipped: 1.0
+epoch: 4, train_batch_id: 300, avg_cost: 0.08490149676799774
+grad_norm: 2.638814687728882, clipped: 1.0
+epoch: 4, train_batch_id: 350, avg_cost: 0.09365576505661011
+grad_norm: 3.0438148975372314, clipped: 1.0
+epoch: 4, train_batch_id: 400, avg_cost: 0.08064775168895721
+grad_norm: 4.542025089263916, clipped: 1.0
+epoch: 4, train_batch_id: 450, avg_cost: 0.08327409625053406
+grad_norm: 3.879450559616089, clipped: 1.0
+epoch: 4, train_batch_id: 500, avg_cost: 0.0883360356092453
+grad_norm: 2.8927388191223145, clipped: 1.0
+epoch: 4, train_batch_id: 550, avg_cost: 0.08137065172195435
+grad_norm: 6.64849853515625, clipped: 1.0
+epoch: 4, train_batch_id: 600, avg_cost: 0.08417099714279175
+grad_norm: 3.885152578353882, clipped: 1.0
+epoch: 4, train_batch_id: 650, avg_cost: 0.08598992228507996
+grad_norm: 3.0974466800689697, clipped: 1.0
+epoch: 4, train_batch_id: 700, avg_cost: 0.0869835615158081
+grad_norm: 5.059864044189453, clipped: 1.0
+epoch: 4, train_batch_id: 750, avg_cost: 0.0888022780418396
+grad_norm: 3.43375825881958, clipped: 1.0
+epoch: 4, train_batch_id: 800, avg_cost: 0.08627740293741226
+grad_norm: 5.031371593475342, clipped: 1.0
+epoch: 4, train_batch_id: 850, avg_cost: 0.08563114702701569
+grad_norm: 4.777578353881836, clipped: 1.0
+epoch: 4, train_batch_id: 900, avg_cost: 0.08342520892620087
+grad_norm: 3.0034713745117188, clipped: 1.0
+epoch: 4, train_batch_id: 950, avg_cost: 0.08355627208948135
+grad_norm: 2.896965742111206, clipped: 1.0
+Finished epoch 4, took 00:09:39 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.87
+Validation mean of recall_accuracy: 0.77
+Validation max of recall_accuracy: 0.94
+Validation min of recall_accuracy: 0.49
+Validation overall avg_cost: 0.09971432387828827 +- 0.0006278816726990044
+Evaluating candidate model on evaluation dataset
+Epoch 4 candidate mean 0.09971433132886887, baseline epoch 3 mean 0.09961146861314774, difference 0.00010286271572113037
+Start train epoch 5, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 5, train_batch_id: 0, avg_cost: 0.08359237760305405
+grad_norm: 4.139155387878418, clipped: 1.0
+epoch: 5, train_batch_id: 50, avg_cost: 0.08291316032409668
+grad_norm: 3.449997901916504, clipped: 1.0
+epoch: 5, train_batch_id: 100, avg_cost: 0.08077488839626312
+grad_norm: 3.2163994312286377, clipped: 1.0
+epoch: 5, train_batch_id: 150, avg_cost: 0.08787687122821808
+grad_norm: 2.334989070892334, clipped: 1.0
+epoch: 5, train_batch_id: 200, avg_cost: 0.08388075232505798
+grad_norm: 4.020361423492432, clipped: 1.0
+epoch: 5, train_batch_id: 250, avg_cost: 0.08474407345056534
+grad_norm: 2.5785059928894043, clipped: 1.0
+epoch: 5, train_batch_id: 300, avg_cost: 0.08284378796815872
+grad_norm: 3.683396100997925, clipped: 1.0
+epoch: 5, train_batch_id: 350, avg_cost: 0.08956429362297058
+grad_norm: 3.3164315223693848, clipped: 1.0
+epoch: 5, train_batch_id: 400, avg_cost: 0.07860846817493439
+grad_norm: 2.6824142932891846, clipped: 1.0
+epoch: 5, train_batch_id: 450, avg_cost: 0.0839487835764885
+grad_norm: 2.2625694274902344, clipped: 1.0
+epoch: 5, train_batch_id: 500, avg_cost: 0.08660821616649628
+grad_norm: 3.811188220977783, clipped: 1.0
+epoch: 5, train_batch_id: 550, avg_cost: 0.08065255731344223
+grad_norm: 9.36913776397705, clipped: 1.0
+epoch: 5, train_batch_id: 600, avg_cost: 0.08452185988426208
+grad_norm: 2.799388885498047, clipped: 1.0
+epoch: 5, train_batch_id: 650, avg_cost: 0.08356695622205734
+grad_norm: 3.005303144454956, clipped: 1.0
+epoch: 5, train_batch_id: 700, avg_cost: 0.08317838609218597
+grad_norm: 4.853612422943115, clipped: 1.0
+epoch: 5, train_batch_id: 750, avg_cost: 0.08713684231042862
+grad_norm: 4.006865978240967, clipped: 1.0
+epoch: 5, train_batch_id: 800, avg_cost: 0.08532027900218964
+grad_norm: 3.0473742485046387, clipped: 1.0
+epoch: 5, train_batch_id: 850, avg_cost: 0.08541522920131683
+grad_norm: 3.706240653991699, clipped: 1.0
+epoch: 5, train_batch_id: 900, avg_cost: 0.082854263484478
+grad_norm: 2.2900595664978027, clipped: 1.0
+epoch: 5, train_batch_id: 950, avg_cost: 0.0822562426328659
+grad_norm: 2.9450483322143555, clipped: 1.0
+Finished epoch 5, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.85
+Validation mean of recall_accuracy: 0.77
+Validation max of recall_accuracy: 0.94
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.09960749000310898 +- 0.0006284386618062854
+Evaluating candidate model on evaluation dataset
+Epoch 5 candidate mean 0.09960749000310898, baseline epoch 3 mean 0.09961146861314774, difference -3.978610038757324e-06
+p-value: 0.4756921445678606
+Start train epoch 6, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 6, train_batch_id: 0, avg_cost: 0.07850562781095505
+grad_norm: 2.4225125312805176, clipped: 1.0
+epoch: 6, train_batch_id: 50, avg_cost: 0.07962335646152496
+grad_norm: 2.860008716583252, clipped: 1.0
+epoch: 6, train_batch_id: 100, avg_cost: 0.0807121992111206
+grad_norm: 3.1895384788513184, clipped: 1.0
+epoch: 6, train_batch_id: 150, avg_cost: 0.0893080085515976
+grad_norm: 2.366945266723633, clipped: 1.0
+epoch: 6, train_batch_id: 200, avg_cost: 0.0818614661693573
+grad_norm: 2.304342269897461, clipped: 1.0
+epoch: 6, train_batch_id: 250, avg_cost: 0.08565668761730194
+grad_norm: 2.442058801651001, clipped: 1.0
+epoch: 6, train_batch_id: 300, avg_cost: 0.0819627046585083
+grad_norm: 2.5166122913360596, clipped: 1.0
+epoch: 6, train_batch_id: 350, avg_cost: 0.08990421146154404
+grad_norm: 3.3442585468292236, clipped: 1.0
+epoch: 6, train_batch_id: 400, avg_cost: 0.07762189954519272
+grad_norm: 2.6536755561828613, clipped: 1.0
+epoch: 6, train_batch_id: 450, avg_cost: 0.07932998985052109
+grad_norm: 2.1189956665039062, clipped: 1.0
+epoch: 6, train_batch_id: 500, avg_cost: 0.08652510493993759
+grad_norm: 2.2333974838256836, clipped: 1.0
+epoch: 6, train_batch_id: 550, avg_cost: 0.08171714097261429
+grad_norm: 2.2921862602233887, clipped: 1.0
+epoch: 6, train_batch_id: 600, avg_cost: 0.08104418218135834
+grad_norm: 2.524343490600586, clipped: 1.0
+epoch: 6, train_batch_id: 650, avg_cost: 0.08129860460758209
+grad_norm: 3.3206257820129395, clipped: 1.0
+epoch: 6, train_batch_id: 700, avg_cost: 0.08448801934719086
+grad_norm: 2.829394578933716, clipped: 1.0
+epoch: 6, train_batch_id: 750, avg_cost: 0.08403340727090836
+grad_norm: 3.246730327606201, clipped: 1.0
+epoch: 6, train_batch_id: 800, avg_cost: 0.08214764297008514
+grad_norm: 2.5688862800598145, clipped: 1.0
+epoch: 6, train_batch_id: 850, avg_cost: 0.083197683095932
+grad_norm: 2.245271682739258, clipped: 1.0
+epoch: 6, train_batch_id: 900, avg_cost: 0.0809331089258194
+grad_norm: 3.1083881855010986, clipped: 1.0
+epoch: 6, train_batch_id: 950, avg_cost: 0.0816795825958252
+grad_norm: 1.9834563732147217, clipped: 1.0
+Finished epoch 6, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.82
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.49
+Validation overall avg_cost: 0.09890742599964142 +- 0.0006280320230871439
+Evaluating candidate model on evaluation dataset
+Epoch 6 candidate mean 0.09890741854906082, baseline epoch 3 mean 0.09961146861314774, difference -0.0007040500640869141
+p-value: 9.437008929502086e-34
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 7, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 7, train_batch_id: 0, avg_cost: 0.07817026972770691
+grad_norm: 3.022826671600342, clipped: 1.0
+epoch: 7, train_batch_id: 50, avg_cost: 0.07882987707853317
+grad_norm: 2.0782206058502197, clipped: 1.0
+epoch: 7, train_batch_id: 100, avg_cost: 0.07898180186748505
+grad_norm: 1.9803615808486938, clipped: 1.0
+epoch: 7, train_batch_id: 150, avg_cost: 0.08902359008789062
+grad_norm: 3.7814435958862305, clipped: 1.0
+epoch: 7, train_batch_id: 200, avg_cost: 0.08205129206180573
+grad_norm: 2.234107732772827, clipped: 1.0
+epoch: 7, train_batch_id: 250, avg_cost: 0.08232980221509933
+grad_norm: 1.951149582862854, clipped: 1.0
+epoch: 7, train_batch_id: 300, avg_cost: 0.08011642843484879
+grad_norm: 2.7551639080047607, clipped: 1.0
+epoch: 7, train_batch_id: 350, avg_cost: 0.09071227163076401
+grad_norm: 3.5634636878967285, clipped: 1.0
+epoch: 7, train_batch_id: 400, avg_cost: 0.07332213968038559
+grad_norm: 1.8937333822250366, clipped: 1.0
+epoch: 7, train_batch_id: 450, avg_cost: 0.08006402850151062
+grad_norm: 2.5825772285461426, clipped: 1.0
+epoch: 7, train_batch_id: 500, avg_cost: 0.08243758976459503
+grad_norm: 2.3151044845581055, clipped: 1.0
+epoch: 7, train_batch_id: 550, avg_cost: 0.07998029887676239
+grad_norm: 3.055572509765625, clipped: 1.0
+epoch: 7, train_batch_id: 600, avg_cost: 0.08088661730289459
+grad_norm: 2.7087225914001465, clipped: 1.0
+epoch: 7, train_batch_id: 650, avg_cost: 0.08127032965421677
+grad_norm: 2.705709934234619, clipped: 1.0
+epoch: 7, train_batch_id: 700, avg_cost: 0.08280739188194275
+grad_norm: 2.701483726501465, clipped: 1.0
+epoch: 7, train_batch_id: 750, avg_cost: 0.08311306685209274
+grad_norm: 2.060857057571411, clipped: 1.0
+epoch: 7, train_batch_id: 800, avg_cost: 0.08210374414920807
+grad_norm: 1.455344319343567, clipped: 1.0
+epoch: 7, train_batch_id: 850, avg_cost: 0.08187344670295715
+grad_norm: 2.262404441833496, clipped: 1.0
+epoch: 7, train_batch_id: 900, avg_cost: 0.07936245203018188
+grad_norm: 1.8650867938995361, clipped: 1.0
+epoch: 7, train_batch_id: 950, avg_cost: 0.07877587527036667
+grad_norm: 1.6919915676116943, clipped: 1.0
+Finished epoch 7, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.79
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.49
+Validation overall avg_cost: 0.09856140613555908 +- 0.0006251165177673101
+Evaluating candidate model on evaluation dataset
+Epoch 7 candidate mean 0.09856140613555908, baseline epoch 6 mean 0.09890741854906082, difference -0.0003460124135017395
+p-value: 2.63452698127653e-32
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 8, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 8, train_batch_id: 0, avg_cost: 0.07648041844367981
+grad_norm: 2.2510461807250977, clipped: 1.0
+epoch: 8, train_batch_id: 50, avg_cost: 0.07849915325641632
+grad_norm: 4.51563835144043, clipped: 1.0
+epoch: 8, train_batch_id: 100, avg_cost: 0.07709819078445435
+grad_norm: 1.7680829763412476, clipped: 1.0
+epoch: 8, train_batch_id: 150, avg_cost: 0.08442649245262146
+grad_norm: 1.6431522369384766, clipped: 1.0
+epoch: 8, train_batch_id: 200, avg_cost: 0.07973707467317581
+grad_norm: 2.1897144317626953, clipped: 1.0
+epoch: 8, train_batch_id: 250, avg_cost: 0.08018311858177185
+grad_norm: 1.8566561937332153, clipped: 1.0
+epoch: 8, train_batch_id: 300, avg_cost: 0.07834300398826599
+grad_norm: 2.110504388809204, clipped: 1.0
+epoch: 8, train_batch_id: 350, avg_cost: 0.08605840057134628
+grad_norm: 1.8739078044891357, clipped: 1.0
+epoch: 8, train_batch_id: 400, avg_cost: 0.07550610601902008
+grad_norm: 3.4831626415252686, clipped: 1.0
+epoch: 8, train_batch_id: 450, avg_cost: 0.07758095860481262
+grad_norm: 2.087461471557617, clipped: 1.0
+epoch: 8, train_batch_id: 500, avg_cost: 0.08356407284736633
+grad_norm: 3.0280394554138184, clipped: 1.0
+epoch: 8, train_batch_id: 550, avg_cost: 0.07739675045013428
+grad_norm: 2.485860824584961, clipped: 1.0
+epoch: 8, train_batch_id: 600, avg_cost: 0.07873386144638062
+grad_norm: 1.6527025699615479, clipped: 1.0
+epoch: 8, train_batch_id: 650, avg_cost: 0.07820864021778107
+grad_norm: 1.6111117601394653, clipped: 1.0
+epoch: 8, train_batch_id: 700, avg_cost: 0.08144436776638031
+grad_norm: 3.1881024837493896, clipped: 1.0
+epoch: 8, train_batch_id: 750, avg_cost: 0.08158287405967712
+grad_norm: 2.2887518405914307, clipped: 1.0
+epoch: 8, train_batch_id: 800, avg_cost: 0.08113564550876617
+grad_norm: 2.358649253845215, clipped: 1.0
+epoch: 8, train_batch_id: 850, avg_cost: 0.08100906014442444
+grad_norm: 2.107546329498291, clipped: 1.0
+epoch: 8, train_batch_id: 900, avg_cost: 0.07758065313100815
+grad_norm: 1.9150162935256958, clipped: 1.0
+epoch: 8, train_batch_id: 950, avg_cost: 0.07886843383312225
+grad_norm: 3.023898124694824, clipped: 1.0
+Finished epoch 8, took 00:09:42 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.78
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.49
+Validation overall avg_cost: 0.09837327152490616 +- 0.0006214496679604053
+Evaluating candidate model on evaluation dataset
+Epoch 8 candidate mean 0.09837327152490616, baseline epoch 7 mean 0.09856140613555908, difference -0.00018813461065292358
+p-value: 0.002464628187405692
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 9, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 9, train_batch_id: 0, avg_cost: 0.07542864978313446
+grad_norm: 2.3370368480682373, clipped: 1.0
+epoch: 9, train_batch_id: 50, avg_cost: 0.07654537260532379
+grad_norm: 2.1509523391723633, clipped: 1.0
+epoch: 9, train_batch_id: 100, avg_cost: 0.07486745715141296
+grad_norm: 2.4958291053771973, clipped: 1.0
+epoch: 9, train_batch_id: 150, avg_cost: 0.08547733724117279
+grad_norm: 1.8582350015640259, clipped: 1.0
+epoch: 9, train_batch_id: 200, avg_cost: 0.07922746241092682
+grad_norm: 2.6366217136383057, clipped: 1.0
+epoch: 9, train_batch_id: 250, avg_cost: 0.08162830024957657
+grad_norm: 2.021327495574951, clipped: 1.0
+epoch: 9, train_batch_id: 300, avg_cost: 0.077728271484375
+grad_norm: 1.9497367143630981, clipped: 1.0
+epoch: 9, train_batch_id: 350, avg_cost: 0.08672277629375458
+grad_norm: 2.2669286727905273, clipped: 1.0
+epoch: 9, train_batch_id: 400, avg_cost: 0.07346993684768677
+grad_norm: 2.2209107875823975, clipped: 1.0
+epoch: 9, train_batch_id: 450, avg_cost: 0.07570108771324158
+grad_norm: 1.7960002422332764, clipped: 1.0
+epoch: 9, train_batch_id: 500, avg_cost: 0.07968442142009735
+grad_norm: 1.6474121809005737, clipped: 1.0
+epoch: 9, train_batch_id: 550, avg_cost: 0.07693009078502655
+grad_norm: 1.6675397157669067, clipped: 1.0
+epoch: 9, train_batch_id: 600, avg_cost: 0.07838169485330582
+grad_norm: 1.736100196838379, clipped: 1.0
+epoch: 9, train_batch_id: 650, avg_cost: 0.0803733840584755
+grad_norm: 2.225686550140381, clipped: 1.0
+epoch: 9, train_batch_id: 700, avg_cost: 0.07865330576896667
+grad_norm: 2.2373709678649902, clipped: 1.0
+epoch: 9, train_batch_id: 750, avg_cost: 0.07946506142616272
+grad_norm: 2.193294048309326, clipped: 1.0
+epoch: 9, train_batch_id: 800, avg_cost: 0.07889260351657867
+grad_norm: 1.542714238166809, clipped: 1.0
+epoch: 9, train_batch_id: 850, avg_cost: 0.07989734411239624
+grad_norm: 2.3339483737945557, clipped: 1.0
+epoch: 9, train_batch_id: 900, avg_cost: 0.07645148783922195
+grad_norm: 1.359761118888855, clipped: 1.0
+epoch: 9, train_batch_id: 950, avg_cost: 0.07796656340360641
+grad_norm: 1.9822636842727661, clipped: 1.0
+Finished epoch 9, took 00:09:43 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.77
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.49
+Validation overall avg_cost: 0.09819816052913666 +- 0.0006242792005650699
+Evaluating candidate model on evaluation dataset
+Epoch 9 candidate mean 0.09819816052913666, baseline epoch 8 mean 0.09837327152490616, difference -0.00017511099576950073
+p-value: 0.0006189813408743246
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 10, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 10, train_batch_id: 0, avg_cost: 0.07596421241760254
+grad_norm: 1.9170724153518677, clipped: 1.0
+epoch: 10, train_batch_id: 50, avg_cost: 0.07540693879127502
+grad_norm: 2.1092591285705566, clipped: 1.0
+epoch: 10, train_batch_id: 100, avg_cost: 0.07381992787122726
+grad_norm: 1.8962222337722778, clipped: 1.0
+epoch: 10, train_batch_id: 150, avg_cost: 0.08571302890777588
+grad_norm: 2.0323691368103027, clipped: 1.0
+epoch: 10, train_batch_id: 200, avg_cost: 0.08050574362277985
+grad_norm: 2.4869515895843506, clipped: 1.0
+epoch: 10, train_batch_id: 250, avg_cost: 0.07994918525218964
+grad_norm: 1.661059856414795, clipped: 1.0
+epoch: 10, train_batch_id: 300, avg_cost: 0.07639126479625702
+grad_norm: 2.260282039642334, clipped: 1.0
+epoch: 10, train_batch_id: 350, avg_cost: 0.08698365092277527
+grad_norm: 1.815313696861267, clipped: 1.0
+epoch: 10, train_batch_id: 400, avg_cost: 0.07228890061378479
+grad_norm: 1.770200490951538, clipped: 1.0
+epoch: 10, train_batch_id: 450, avg_cost: 0.07427901774644852
+grad_norm: 2.1867759227752686, clipped: 1.0
+epoch: 10, train_batch_id: 500, avg_cost: 0.08077262341976166
+grad_norm: 2.2302703857421875, clipped: 1.0
+epoch: 10, train_batch_id: 550, avg_cost: 0.07705152034759521
+grad_norm: 2.9418864250183105, clipped: 1.0
+epoch: 10, train_batch_id: 600, avg_cost: 0.07635629177093506
+grad_norm: 2.2737607955932617, clipped: 1.0
+epoch: 10, train_batch_id: 650, avg_cost: 0.07821664214134216
+grad_norm: 2.690678358078003, clipped: 1.0
+epoch: 10, train_batch_id: 700, avg_cost: 0.07736942172050476
+grad_norm: 1.6663051843643188, clipped: 1.0
+epoch: 10, train_batch_id: 750, avg_cost: 0.08128298819065094
+grad_norm: 1.7336061000823975, clipped: 1.0
+epoch: 10, train_batch_id: 800, avg_cost: 0.08028947561979294
+grad_norm: 1.5744445323944092, clipped: 1.0
+epoch: 10, train_batch_id: 850, avg_cost: 0.07899996638298035
+grad_norm: 2.7779157161712646, clipped: 1.0
+epoch: 10, train_batch_id: 900, avg_cost: 0.0771135538816452
+grad_norm: 1.4850165843963623, clipped: 1.0
+epoch: 10, train_batch_id: 950, avg_cost: 0.07640263438224792
+grad_norm: 1.4083735942840576, clipped: 1.0
+Finished epoch 10, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.83
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.48
+Validation overall avg_cost: 0.09810932725667953 +- 0.0006246036500670016
+Evaluating candidate model on evaluation dataset
+Epoch 10 candidate mean 0.09810931980609894, baseline epoch 9 mean 0.09819816052913666, difference -8.884072303771973e-05
+p-value: 0.05360831611737549
+Start train epoch 11, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 11, train_batch_id: 0, avg_cost: 0.07391554117202759
+grad_norm: 2.4910874366760254, clipped: 1.0
+epoch: 11, train_batch_id: 50, avg_cost: 0.07467086613178253
+grad_norm: 2.2959463596343994, clipped: 1.0
+epoch: 11, train_batch_id: 100, avg_cost: 0.07427787780761719
+grad_norm: 1.5538948774337769, clipped: 1.0
+epoch: 11, train_batch_id: 150, avg_cost: 0.0842970758676529
+grad_norm: 2.609632968902588, clipped: 1.0
+epoch: 11, train_batch_id: 200, avg_cost: 0.07711093872785568
+grad_norm: 2.246497392654419, clipped: 1.0
+epoch: 11, train_batch_id: 250, avg_cost: 0.07845458388328552
+grad_norm: 1.9420180320739746, clipped: 1.0
+epoch: 11, train_batch_id: 300, avg_cost: 0.07587266713380814
+grad_norm: 1.9960143566131592, clipped: 1.0
+epoch: 11, train_batch_id: 350, avg_cost: 0.082389235496521
+grad_norm: 1.8452790975570679, clipped: 1.0
+epoch: 11, train_batch_id: 400, avg_cost: 0.07253113389015198
+grad_norm: 1.8351185321807861, clipped: 1.0
+epoch: 11, train_batch_id: 450, avg_cost: 0.07547435164451599
+grad_norm: 1.5250158309936523, clipped: 1.0
+epoch: 11, train_batch_id: 500, avg_cost: 0.07874687016010284
+grad_norm: 2.01605224609375, clipped: 1.0
+epoch: 11, train_batch_id: 550, avg_cost: 0.07459446787834167
+grad_norm: 1.7621662616729736, clipped: 1.0
+epoch: 11, train_batch_id: 600, avg_cost: 0.07569465786218643
+grad_norm: 1.6070326566696167, clipped: 1.0
+epoch: 11, train_batch_id: 650, avg_cost: 0.07692772150039673
+grad_norm: 1.7856355905532837, clipped: 1.0
+epoch: 11, train_batch_id: 700, avg_cost: 0.07993963360786438
+grad_norm: 2.4606847763061523, clipped: 1.0
+epoch: 11, train_batch_id: 750, avg_cost: 0.08077783137559891
+grad_norm: 1.6952661275863647, clipped: 1.0
+epoch: 11, train_batch_id: 800, avg_cost: 0.0790284276008606
+grad_norm: 1.6604491472244263, clipped: 1.0
+epoch: 11, train_batch_id: 850, avg_cost: 0.07918616384267807
+grad_norm: 1.8097126483917236, clipped: 1.0
+epoch: 11, train_batch_id: 900, avg_cost: 0.07545177638530731
+grad_norm: 1.5818932056427002, clipped: 1.0
+epoch: 11, train_batch_id: 950, avg_cost: 0.07546132802963257
+grad_norm: 1.590512990951538, clipped: 1.0
+Finished epoch 11, took 00:09:40 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.70
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.48
+Validation overall avg_cost: 0.09760075807571411 +- 0.0006198835908435285
+Evaluating candidate model on evaluation dataset
+Epoch 11 candidate mean 0.09760075807571411, baseline epoch 9 mean 0.09819816052913666, difference -0.0005974024534225464
+p-value: 9.397867866621559e-77
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 12, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 12, train_batch_id: 0, avg_cost: 0.07154348492622375
+grad_norm: 1.6685084104537964, clipped: 1.0
+epoch: 12, train_batch_id: 50, avg_cost: 0.07380568981170654
+grad_norm: 1.7776366472244263, clipped: 1.0
+epoch: 12, train_batch_id: 100, avg_cost: 0.0741664320230484
+grad_norm: 1.7305734157562256, clipped: 1.0
+epoch: 12, train_batch_id: 150, avg_cost: 0.08326549828052521
+grad_norm: 1.7854883670806885, clipped: 1.0
+epoch: 12, train_batch_id: 200, avg_cost: 0.07659611105918884
+grad_norm: 2.454054355621338, clipped: 1.0
+epoch: 12, train_batch_id: 250, avg_cost: 0.07700716704130173
+grad_norm: 2.2629666328430176, clipped: 1.0
+epoch: 12, train_batch_id: 300, avg_cost: 0.07701745629310608
+grad_norm: 1.4489948749542236, clipped: 1.0
+epoch: 12, train_batch_id: 350, avg_cost: 0.08279969543218613
+grad_norm: 1.8959511518478394, clipped: 1.0
+epoch: 12, train_batch_id: 400, avg_cost: 0.07017045468091965
+grad_norm: 1.309749960899353, clipped: 1.0
+epoch: 12, train_batch_id: 450, avg_cost: 0.0740421861410141
+grad_norm: 1.757405400276184, clipped: 1.0
+epoch: 12, train_batch_id: 500, avg_cost: 0.07961640506982803
+grad_norm: 2.173490285873413, clipped: 1.0
+epoch: 12, train_batch_id: 550, avg_cost: 0.07559867203235626
+grad_norm: 1.7359073162078857, clipped: 1.0
+epoch: 12, train_batch_id: 600, avg_cost: 0.07622243463993073
+grad_norm: 1.6916850805282593, clipped: 1.0
+epoch: 12, train_batch_id: 650, avg_cost: 0.0760994404554367
+grad_norm: 1.8163424730300903, clipped: 1.0
+epoch: 12, train_batch_id: 700, avg_cost: 0.0774536281824112
+grad_norm: 2.039499044418335, clipped: 1.0
+epoch: 12, train_batch_id: 750, avg_cost: 0.0788567066192627
+grad_norm: 2.102151870727539, clipped: 1.0
+epoch: 12, train_batch_id: 800, avg_cost: 0.08003803342580795
+grad_norm: 1.6066573858261108, clipped: 1.0
+epoch: 12, train_batch_id: 850, avg_cost: 0.07769347727298737
+grad_norm: 1.631898283958435, clipped: 1.0
+epoch: 12, train_batch_id: 900, avg_cost: 0.07622170448303223
+grad_norm: 1.945005178451538, clipped: 1.0
+epoch: 12, train_batch_id: 950, avg_cost: 0.07433769106864929
+grad_norm: 1.549990177154541, clipped: 1.0
+Finished epoch 12, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.70
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.48
+Validation overall avg_cost: 0.09731066226959229 +- 0.0006186612299643457
+Evaluating candidate model on evaluation dataset
+Epoch 12 candidate mean 0.09731067717075348, baseline epoch 11 mean 0.09760075807571411, difference -0.0002900809049606323
+p-value: 5.261489135291481e-25
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 13, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 13, train_batch_id: 0, avg_cost: 0.07199780642986298
+grad_norm: 1.7848317623138428, clipped: 1.0
+epoch: 13, train_batch_id: 50, avg_cost: 0.07307659089565277
+grad_norm: 1.793255090713501, clipped: 1.0
+epoch: 13, train_batch_id: 100, avg_cost: 0.07546038925647736
+grad_norm: 2.057633399963379, clipped: 1.0
+epoch: 13, train_batch_id: 150, avg_cost: 0.08425655215978622
+grad_norm: 1.6308887004852295, clipped: 1.0
+epoch: 13, train_batch_id: 200, avg_cost: 0.07509665191173553
+grad_norm: 1.8647682666778564, clipped: 1.0
+epoch: 13, train_batch_id: 250, avg_cost: 0.07673080265522003
+grad_norm: 1.7861409187316895, clipped: 1.0
+epoch: 13, train_batch_id: 300, avg_cost: 0.07535221427679062
+grad_norm: 1.9144822359085083, clipped: 1.0
+epoch: 13, train_batch_id: 350, avg_cost: 0.0821412056684494
+grad_norm: 1.8448917865753174, clipped: 1.0
+epoch: 13, train_batch_id: 400, avg_cost: 0.06909734010696411
+grad_norm: 1.9774914979934692, clipped: 1.0
+epoch: 13, train_batch_id: 450, avg_cost: 0.07549778372049332
+grad_norm: 2.4695684909820557, clipped: 1.0
+epoch: 13, train_batch_id: 500, avg_cost: 0.07780776917934418
+grad_norm: 2.752978563308716, clipped: 1.0
+epoch: 13, train_batch_id: 550, avg_cost: 0.07354548573493958
+grad_norm: 1.7116113901138306, clipped: 1.0
+epoch: 13, train_batch_id: 600, avg_cost: 0.07367710024118423
+grad_norm: 1.2122485637664795, clipped: 1.0
+epoch: 13, train_batch_id: 650, avg_cost: 0.07656873762607574
+grad_norm: 2.320814609527588, clipped: 1.0
+epoch: 13, train_batch_id: 700, avg_cost: 0.07522851228713989
+grad_norm: 1.5688579082489014, clipped: 1.0
+epoch: 13, train_batch_id: 750, avg_cost: 0.08067668229341507
+grad_norm: 1.4209595918655396, clipped: 1.0
+epoch: 13, train_batch_id: 800, avg_cost: 0.07810493558645248
+grad_norm: 1.7307486534118652, clipped: 1.0
+epoch: 13, train_batch_id: 850, avg_cost: 0.07684909552335739
+grad_norm: 1.9073491096496582, clipped: 1.0
+epoch: 13, train_batch_id: 900, avg_cost: 0.07387661188840866
+grad_norm: 2.44301438331604, clipped: 1.0
+epoch: 13, train_batch_id: 950, avg_cost: 0.07684019207954407
+grad_norm: 1.8335041999816895, clipped: 1.0
+Finished epoch 13, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.69
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.96
+Validation min of recall_accuracy: 0.48
+Validation overall avg_cost: 0.09718136489391327 +- 0.0006197949987836182
+Evaluating candidate model on evaluation dataset
+Epoch 13 candidate mean 0.09718135744333267, baseline epoch 12 mean 0.09731067717075348, difference -0.00012931972742080688
+p-value: 0.0001028421537880688
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 14, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 14, train_batch_id: 0, avg_cost: 0.07161659002304077
+grad_norm: 1.6365045309066772, clipped: 1.0
+epoch: 14, train_batch_id: 50, avg_cost: 0.07230041176080704
+grad_norm: 1.255068302154541, clipped: 1.0
+epoch: 14, train_batch_id: 100, avg_cost: 0.07195253670215607
+grad_norm: 1.0974618196487427, clipped: 1.0
+epoch: 14, train_batch_id: 150, avg_cost: 0.08200140297412872
+grad_norm: 1.3477860689163208, clipped: 1.0
+epoch: 14, train_batch_id: 200, avg_cost: 0.07511204481124878
+grad_norm: 1.5821456909179688, clipped: 1.0
+epoch: 14, train_batch_id: 250, avg_cost: 0.07856756448745728
+grad_norm: 1.5052522420883179, clipped: 1.0
+epoch: 14, train_batch_id: 300, avg_cost: 0.07398992776870728
+grad_norm: 2.2312536239624023, clipped: 1.0
+epoch: 14, train_batch_id: 350, avg_cost: 0.08261383324861526
+grad_norm: 1.4980133771896362, clipped: 1.0
+epoch: 14, train_batch_id: 400, avg_cost: 0.06940311193466187
+grad_norm: 1.1022164821624756, clipped: 1.0
+epoch: 14, train_batch_id: 450, avg_cost: 0.073898546397686
+grad_norm: 2.993960380554199, clipped: 1.0
+epoch: 14, train_batch_id: 500, avg_cost: 0.07670624554157257
+grad_norm: 1.7564094066619873, clipped: 1.0
+epoch: 14, train_batch_id: 550, avg_cost: 0.07386913150548935
+grad_norm: 1.3688392639160156, clipped: 1.0
+epoch: 14, train_batch_id: 600, avg_cost: 0.07596822082996368
+grad_norm: 1.6284140348434448, clipped: 1.0
+epoch: 14, train_batch_id: 650, avg_cost: 0.07537474483251572
+grad_norm: 1.5451514720916748, clipped: 1.0
+epoch: 14, train_batch_id: 700, avg_cost: 0.07679523527622223
+grad_norm: 1.842435359954834, clipped: 1.0
+epoch: 14, train_batch_id: 750, avg_cost: 0.08034396171569824
+grad_norm: 1.323747158050537, clipped: 1.0
+epoch: 14, train_batch_id: 800, avg_cost: 0.07645657658576965
+grad_norm: 1.729859709739685, clipped: 1.0
+epoch: 14, train_batch_id: 850, avg_cost: 0.0771733894944191
+grad_norm: 1.7162580490112305, clipped: 1.0
+epoch: 14, train_batch_id: 900, avg_cost: 0.07328592240810394
+grad_norm: 1.964477777481079, clipped: 1.0
+epoch: 14, train_batch_id: 950, avg_cost: 0.07366929948329926
+grad_norm: 2.090909242630005, clipped: 1.0
+Finished epoch 14, took 00:09:40 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.71
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.95
+Validation min of recall_accuracy: 0.48
+Validation overall avg_cost: 0.09708455950021744 +- 0.000621417595539242
+Evaluating candidate model on evaluation dataset
+Epoch 14 candidate mean 0.09708455204963684, baseline epoch 13 mean 0.09718135744333267, difference -9.68053936958313e-05
+p-value: 0.000536579147350404
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 15, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 15, train_batch_id: 0, avg_cost: 0.0717119425535202
+grad_norm: 1.7421557903289795, clipped: 1.0
+epoch: 15, train_batch_id: 50, avg_cost: 0.07359161972999573
+grad_norm: 1.7494277954101562, clipped: 1.0
+epoch: 15, train_batch_id: 100, avg_cost: 0.07068110257387161
+grad_norm: 1.539258599281311, clipped: 1.0
+epoch: 15, train_batch_id: 150, avg_cost: 0.08242960274219513
+grad_norm: 2.132368326187134, clipped: 1.0
+epoch: 15, train_batch_id: 200, avg_cost: 0.07506804168224335
+grad_norm: 1.8837937116622925, clipped: 1.0
+epoch: 15, train_batch_id: 250, avg_cost: 0.07751409709453583
+grad_norm: 1.4960440397262573, clipped: 1.0
+epoch: 15, train_batch_id: 300, avg_cost: 0.07329842448234558
+grad_norm: 1.3428821563720703, clipped: 1.0
+epoch: 15, train_batch_id: 350, avg_cost: 0.08234702050685883
+grad_norm: 1.4186503887176514, clipped: 1.0
+epoch: 15, train_batch_id: 400, avg_cost: 0.0687071904540062
+grad_norm: 1.240034818649292, clipped: 1.0
+epoch: 15, train_batch_id: 450, avg_cost: 0.07185956835746765
+grad_norm: 1.420292854309082, clipped: 1.0
+epoch: 15, train_batch_id: 500, avg_cost: 0.07648494839668274
+grad_norm: 2.329585552215576, clipped: 1.0
+epoch: 15, train_batch_id: 550, avg_cost: 0.07386325299739838
+grad_norm: 1.2524032592773438, clipped: 1.0
+epoch: 15, train_batch_id: 600, avg_cost: 0.07450323551893234
+grad_norm: 1.4463129043579102, clipped: 1.0
+epoch: 15, train_batch_id: 650, avg_cost: 0.07539846003055573
+grad_norm: 1.9875203371047974, clipped: 1.0
+epoch: 15, train_batch_id: 700, avg_cost: 0.07499021291732788
+grad_norm: 1.8884209394454956, clipped: 1.0
+epoch: 15, train_batch_id: 750, avg_cost: 0.07788016647100449
+grad_norm: 1.2132325172424316, clipped: 1.0
+epoch: 15, train_batch_id: 800, avg_cost: 0.07676175236701965
+grad_norm: 1.8503481149673462, clipped: 1.0
+epoch: 15, train_batch_id: 850, avg_cost: 0.07628125697374344
+grad_norm: 1.6453912258148193, clipped: 1.0
+epoch: 15, train_batch_id: 900, avg_cost: 0.07292060554027557
+grad_norm: 1.6578418016433716, clipped: 1.0
+epoch: 15, train_batch_id: 950, avg_cost: 0.07367768883705139
+grad_norm: 1.7054470777511597, clipped: 1.0
+Finished epoch 15, took 00:09:41 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.60
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.96
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.09665624797344208 +- 0.0006155723822303116
+Evaluating candidate model on evaluation dataset
+Epoch 15 candidate mean 0.09665624797344208, baseline epoch 14 mean 0.09708455204963684, difference -0.0004283040761947632
+p-value: 3.1487983436652134e-18
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 16, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
+epoch: 16, train_batch_id: 0, avg_cost: 0.06975562870502472
+grad_norm: 1.5466148853302002, clipped: 1.0
+epoch: 16, train_batch_id: 50, avg_cost: 0.07291214168071747
+grad_norm: 1.2515087127685547, clipped: 1.0
+epoch: 16, train_batch_id: 100, avg_cost: 0.06943162530660629
+grad_norm: 1.108971357345581, clipped: 1.0
+epoch: 16, train_batch_id: 150, avg_cost: 0.0813346728682518
+grad_norm: 2.0922343730926514, clipped: 1.0
+epoch: 16, train_batch_id: 200, avg_cost: 0.0744367390871048
+grad_norm: 2.2695395946502686, clipped: 1.0
+epoch: 16, train_batch_id: 250, avg_cost: 0.07720240950584412
+grad_norm: 1.6484624147415161, clipped: 1.0
+epoch: 16, train_batch_id: 300, avg_cost: 0.07265254855155945
+grad_norm: 1.307157278060913, clipped: 1.0
+epoch: 16, train_batch_id: 350, avg_cost: 0.08216822892427444
+grad_norm: 1.7821561098098755, clipped: 1.0
+epoch: 16, train_batch_id: 400, avg_cost: 0.06915904581546783
+grad_norm: 1.3239142894744873, clipped: 1.0
+epoch: 16, train_batch_id: 450, avg_cost: 0.07052049040794373
+grad_norm: 2.7136929035186768, clipped: 1.0
+epoch: 16, train_batch_id: 500, avg_cost: 0.07530255615711212
+grad_norm: 1.6958701610565186, clipped: 1.0
+epoch: 16, train_batch_id: 550, avg_cost: 0.07386091351509094
+grad_norm: 2.7681405544281006, clipped: 1.0
+epoch: 16, train_batch_id: 600, avg_cost: 0.07490909099578857
+grad_norm: 1.8756526708602905, clipped: 1.0
+epoch: 16, train_batch_id: 650, avg_cost: 0.07377026230096817
+grad_norm: 1.9206196069717407, clipped: 1.0
+epoch: 16, train_batch_id: 700, avg_cost: 0.07626710832118988
+grad_norm: 1.7510361671447754, clipped: 1.0
+epoch: 16, train_batch_id: 750, avg_cost: 0.07931271195411682
+grad_norm: 1.709326148033142, clipped: 1.0
+epoch: 16, train_batch_id: 800, avg_cost: 0.07771425694227219
+grad_norm: 1.571701169013977, clipped: 1.0
+epoch: 16, train_batch_id: 850, avg_cost: 0.07575616240501404
+grad_norm: 2.330643653869629, clipped: 1.0
+epoch: 16, train_batch_id: 900, avg_cost: 0.07354921847581863
+grad_norm: 1.3697577714920044, clipped: 1.0
+epoch: 16, train_batch_id: 950, avg_cost: 0.07352368533611298
+grad_norm: 1.5788226127624512, clipped: 1.0
+Finished epoch 16, took 00:09:42 s
+Saving model and state...
+Validating...
+Validation count of misMatch: 44.58
+Validation mean of recall_accuracy: 0.78
+Validation max of recall_accuracy: 0.96
+Validation min of recall_accuracy: 0.50
+Validation overall avg_cost: 0.09658345580101013 +- 0.0006193688022904098
+Evaluating candidate model on evaluation dataset
+Epoch 16 candidate mean 0.09658345580101013, baseline epoch 15 mean 0.09665624797344208, difference -7.27921724319458e-05
+p-value: 0.006962382789163121
+Update baseline
+Evaluating baseline model on evaluation dataset
+Start train epoch 17, lr=1e-06 for run run_20210806T110255
+Evaluating baseline on dataset...
