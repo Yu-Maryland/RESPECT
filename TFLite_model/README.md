@@ -1,4 +1,4 @@
-## This folder is the TFLite model
+## TFLite model
 
 1. Compiler the TFLite model with Edge TPU compiler (version 15)
 
