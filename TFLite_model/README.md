@@ -4,7 +4,7 @@
 
 Edge TPU compiler version 15: https://github.com/google-coral/edgetpu/files/5546715/edgetpu-compiler_15.0_amd64.deb.tar.gz
 
-edgetpu_compiler model_0_"modelname"_quant_"stage".tflite
+edgetpu_compiler model_0_"model_name"_quant_"stage".tflite
 
 2. Install the PyCoral API
 
