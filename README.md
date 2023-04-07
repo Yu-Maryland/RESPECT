@@ -1,4 +1,4 @@
-## Anonymous repository for DATE2023 "RESPECT: RESPECT: Reinforcement Learning based Edge Scheduling on Pipelined Coral Edge TPUs" submission 
+## RESPECT: Reinforcement Learning based Edge Scheduling on Pipelined Coral Edge TPUs
 
 ### Core code structure
 
